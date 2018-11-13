@@ -109,3 +109,21 @@ void dc_damage_set_other(void value)
 
 	setlocalvar(instance + DC_DAMAGE_VAR_KEY_OTHER, value);
 }
+
+// Attack type to apply.
+int dc_velocity_get_attack_type()
+{
+	void result = getlocalvar(DC_DAMAGE_VAR_KEY_TYPE);
+
+	if (typeof(result) != openborconstant("VT_INTEGER"))
+	{
+		result = DC_DAMAGE_DEFAULT_TYPE;
+	}
+
+	return result;
+}
+
+void dc_velocity_set_attack_type(int value)
+{
+	setlocalvar(DC_DAMAGE_VAR_KEY_TYPE, value);
+}
