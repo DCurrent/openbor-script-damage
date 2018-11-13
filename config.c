@@ -41,6 +41,75 @@ void dc_damage_set_drop_force(int value)
 	setlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_FORCE, value);
 }
 
+// Knockdown velocity to apply, X axis.
+float dc_damage_get_drop_velocity_x()
+{
+	int instance;
+	float result;
+
+	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_VELOCITY_X);
+
+	if (typeof(result) != openborconstant("VT_DECIMAL"))
+	{
+		result = DC_DAMAGE_DEFAULT_DROP_VELOCITY_X;
+	}
+
+	return result;
+}
+
+void dc_damage_set_drop_velocity_x(float value)
+{
+	int instance;
+
+	setlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_VELOCITY_X, value);
+}
+
+// Knockdown velocity to apply, Y axis.
+float dc_damage_get_drop_velocity_y()
+{
+	int instance;
+	float result;
+
+	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_VELOCITY_Y);
+
+	if (typeof(result) != openborconstant("VT_DECIMAL"))
+	{
+		result = DC_DAMAGE_DEFAULT_DROP_VELOCITY_Y;
+	}
+
+	return result;
+}
+
+void dc_damage_set_drop_velocity_y(float value)
+{
+	int instance;
+
+	setlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_VELOCITY_Y, value);
+}
+
+// Knockdown velocity to apply, Z axis.
+float dc_damage_get_drop_velocity_z()
+{
+	int instance;
+	float result;
+
+	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_VELOCITY_Z);
+
+	if (typeof(result) != openborconstant("VT_DECIMAL"))
+	{
+		result = DC_DAMAGE_DEFAULT_DROP_VELOCITY_Z;
+	}
+
+	return result;
+}
+
+void dc_damage_set_drop_velocity_z(float value)
+{
+	int instance;
+
+	setlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_VELOCITY_Z, value);
+}
+
 // Base entity functions will act on.
 void dc_damage_get_entity()
 {
