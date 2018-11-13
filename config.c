@@ -1,7 +1,7 @@
 #include "data/scripts/dc_damage/config.h"
 
 // Which instance is in use?
-int dc_velocity_get_instance()
+int dc_damage_get_instance()
 {
 	void result = getlocalvar(DC_DAMAGE_VAR_KEY_INSTANCE);
 
@@ -13,7 +13,7 @@ int dc_velocity_get_instance()
 	return result;
 }
 
-void dc_velocity_set_instance(int value)
+void dc_damage_set_instance(int value)
 {
 	setlocalvar(DC_DAMAGE_VAR_KEY_INSTANCE, value);
 }
@@ -64,8 +64,8 @@ void dc_damage_set_entity(void value)
 	setlocalvar(instance + DC_DAMAGE_VAR_KEY_ENT, value);
 }
 
-// Force (amout of damage) to apply.
-int dc_damage_get_force()
+// Force (amout of hitpoints) to apply.
+int dc_damage_get_hp_force()
 {
 	int instance;
 	int result;
@@ -80,7 +80,7 @@ int dc_damage_get_force()
 	return result;
 }
 
-void dc_damage_set_force(int value)
+void dc_damage_set_hp_force(int value)
 {
 	int instance;
 
@@ -111,7 +111,7 @@ void dc_damage_set_other(void value)
 }
 
 // Attack type to apply.
-int dc_velocity_get_attack_type()
+int dc_damage_get_attack_type()
 {
 	void result = getlocalvar(DC_DAMAGE_VAR_KEY_TYPE);
 
@@ -123,7 +123,7 @@ int dc_velocity_get_attack_type()
 	return result;
 }
 
-void dc_velocity_set_attack_type(int value)
+void dc_damage_set_attack_type(int value)
 {
 	setlocalvar(DC_DAMAGE_VAR_KEY_TYPE, value);
 }

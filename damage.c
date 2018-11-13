@@ -2,71 +2,27 @@
 
 #import "data/scripts/dc_damage/config.c"
 
-// Base entity functions will act on.
-void dc_damage_get_entity()
+// Caskey, Damon V.
+//
+// Apply damage to entity.
+void dc_damage_apply_damage()
 {
-	int instance;
-	void result;
+	void ent;
+	void other;
 
-	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_ENT);
+	int force;
+	int drop;
+	int type;
 
-	if (typeof(result) != openborconstant("VT_PTR"))
-	{
-		result = DC_DAMAGE_DEFAULT_ENT;
-	}
+	// Entities.
+	ent = dc_damage_get_entity();
+	other = dc_damage_get_other();
 
-	return result;
+	// Attack attributes.
+	force = dc_damage_get_hp_force();
+	drop = dc_damage_get_drop_force();
+	type = dc_damage_get_attack_type();
+
+	damageentity(ent, other, force, drop, type);
 }
 
-void dc_damage_set_entity(void value)
-{
-	int instance;
-
-	setlocalvar(instance + DC_DAMAGE_VAR_KEY_ENT, value);
-}
-
-// Force (amout of damage) to apply.
-int dc_damage_get_force()
-{
-	int instance;
-	int result;
-
-	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_FORCE);
-
-	if (typeof(result) != openborconstant("VT_INTEGER"))
-	{
-		result = DC_DAMAGE_DEFAULT_FORCE;
-	}
-
-	return result;
-}
-
-void dc_damage_set_force(int value)
-{
-	int instance;
-
-	setlocalvar(instance + DC_DAMAGE_VAR_KEY_FORCE, value);
-}
-
-// Entity given credit for damage.
-void dc_damage_get_other()
-{
-	int instance;
-	void result;
-
-	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_OTHER);
-
-	if (typeof(result) != openborconstant("VT_PTR"))
-	{
-		result = DC_DAMAGE_DEFAULT_OTHER;
-	}
-
-	return result;
-}
-
-void dc_damage_set_other(void value)
-{
-	int instance;
-
-	setlocalvar(instance + DC_DAMAGE_VAR_KEY_OTHER, value);
-}
