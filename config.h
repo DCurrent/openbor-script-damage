@@ -5,6 +5,7 @@
 
 // Default values.
 #define DC_DAMAGE_DEFAULT_INSTANCE			0
+#define DC_DAMAGE_DEFAULT_DIRECTION_ADJUST	openborconstant("DIRECTION_ADJUST_OPPOSITE")
 #define DC_DAMAGE_DEFAULT_DROP_FORCE		0
 #define DC_DAMAGE_DEFAULT_DROP_VELOCITY_X	1.2
 #define DC_DAMAGE_DEFAULT_DROP_VELOCITY_Y	3.0
@@ -16,14 +17,15 @@
 
 // Variable keys.
 #define DC_DAMAGE_VAR_KEY_INSTANCE			"dcdam_0"
-#define DC_DAMAGE_VAR_KEY_DROP_FORCE		"dcdam_1"
-#define DC_DAMAGE_VAR_KEY_DROP_VELOCITY_X	"dcdam_2"
-#define DC_DAMAGE_VAR_KEY_DROP_VELOCITY_Y	"dcdam_3"
-#define DC_DAMAGE_VAR_KEY_DROP_VELOCITY_Z	"dcdam_4"
-#define DC_DAMAGE_VAR_KEY_ENT				"dcdam_5"
-#define DC_DAMAGE_VAR_KEY_FORCE				"dcdam_6"
-#define DC_DAMAGE_VAR_KEY_OTHER				"dcdam_7"
-#define DC_DAMAGE_VAR_KEY_TYPE				"dcdam_8"
+#define DC_DAMAGE_VAR_KEY_DIRECTION_ADJUST	"dcdam_1"
+#define DC_DAMAGE_VAR_KEY_DROP_FORCE		"dcdam_2"
+#define DC_DAMAGE_VAR_KEY_DROP_VELOCITY_X	"dcdam_3"
+#define DC_DAMAGE_VAR_KEY_DROP_VELOCITY_Y	"dcdam_4"
+#define DC_DAMAGE_VAR_KEY_DROP_VELOCITY_Z	"dcdam_5"
+#define DC_DAMAGE_VAR_KEY_ENT				"dcdam_6"
+#define DC_DAMAGE_VAR_KEY_FORCE				"dcdam_7"
+#define DC_DAMAGE_VAR_KEY_OTHER				"dcdam_8"
+#define DC_DAMAGE_VAR_KEY_TYPE				"dcdam_9"
 
 #endif // !DC_DAMAGE_CONFIG
 
