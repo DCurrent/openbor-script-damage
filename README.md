@@ -1,2 +1,2 @@
-# openbor-script-damage
-Apply damage to entities.
+# DC Damage
+Control applying damage to entities. Full readme in progress.
