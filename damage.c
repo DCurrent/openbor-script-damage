@@ -17,6 +17,7 @@ void dc_damage_apply_damage()
 	int type;
 	int fall;
 	int dol_force;
+	int projectile;
 
 
 	// Entities.
@@ -32,10 +33,14 @@ void dc_damage_apply_damage()
 
 	// Damge on land / projectile properties.
 	dol_force = dc_damage_get_damage_on_landing_force();
+	projectile = dc_damage_get_projectile();
 
 	changeentityproperty(ent, "damage_on_landing", dol_force);
+	changeentityproperty(ent, "projectile", projectile);
 	
+	// Adjust direction as needed.
 	dc_damage_apply_direction_adjust();
+
 
 	// If damage knocked target down, openBOR
 	// has already applied its default velocity,
