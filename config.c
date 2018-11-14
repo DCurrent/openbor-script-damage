@@ -38,7 +38,7 @@ void dc_damage_set_damage_on_landing_force(int value)
 {
 	int instance;
 
-	setlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_FORCE, value);
+	setlocalvar(instance + DC_DAMAGE_VAR_KEY_DOL_FORCE, value);
 }
 
 // Knockdown power to apply.
@@ -202,10 +202,28 @@ void dc_damage_set_other(void value)
 	setlocalvar(instance + DC_DAMAGE_VAR_KEY_OTHER, value);
 }
 
+// Projectile mode to apply.
+int dc_damage_get_projectile()
+{
+	int result = getlocalvar(DC_DAMAGE_VAR_KEY_PROJECTILE);
+
+	if (typeof(result) != openborconstant("VT_INTEGER"))
+	{
+		result = DC_DAMAGE_DEFAULT_PROJECTILE;
+	}
+
+	return result;
+}
+
+void dc_damage_set_projectile(int value)
+{
+	setlocalvar(DC_DAMAGE_VAR_KEY_PROJECTILE, value);
+}
+
 // Attack type to apply.
 int dc_damage_get_attack_type()
 {
-	void result = getlocalvar(DC_DAMAGE_VAR_KEY_TYPE);
+	int result = getlocalvar(DC_DAMAGE_VAR_KEY_TYPE);
 
 	if (typeof(result) != openborconstant("VT_INTEGER"))
 	{
