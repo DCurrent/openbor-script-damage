@@ -18,6 +18,29 @@ void dc_damage_set_instance(int value)
 	setlocalvar(DC_DAMAGE_VAR_KEY_INSTANCE, value);
 }
 
+// Damage on landing force to apply.
+int dc_damage_get_damage_on_landing_force()
+{
+	int instance;
+	int result;
+
+	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_DOL_FORCE);
+
+	if (typeof(result) != openborconstant("VT_INTEGER"))
+	{
+		result = DC_DAMAGE_DEFAULT_DOL_FORCE;
+	}
+
+	return result;
+}
+
+void dc_damage_set_damage_on_landing_force(int value)
+{
+	int instance;
+
+	setlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_FORCE, value);
+}
+
 // Knockdown power to apply.
 int dc_damage_get_drop_force()
 {
