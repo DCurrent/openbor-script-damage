@@ -3,6 +3,9 @@
 
 // Configuration
 
+#define DC_DAMAGE_PROJECTILE_OFF			0
+#define DC_DAMAGE_PROJECTILE_THROWN			2	// (OpenBOR uses 2 for its default throw system).
+
 // Default values.
 #define DC_DAMAGE_DEFAULT_INSTANCE			0
 #define DC_DAMAGE_DEFAULT_DIRECTION_ADJUST	openborconstant("DIRECTION_ADJUST_OPPOSITE")
@@ -14,6 +17,7 @@
 #define DC_DAMAGE_DEFAULT_ENT				getlocalvar("self")
 #define DC_DAMAGE_DEFAULT_FORCE				0
 #define DC_DAMAGE_DEFAULT_OTHER				NULL()
+#define DC_DAMAGE_DEFAULT_PROJECTILE		DC_DAMAGE_PROJECTILE_OFF
 #define DC_DAMAGE_DEFAULT_TYPE				openborconstant("ATK_NORMAL")
 
 // Variable keys.
@@ -27,7 +31,8 @@
 #define DC_DAMAGE_VAR_KEY_ENT				"dcdam_7"
 #define DC_DAMAGE_VAR_KEY_FORCE				"dcdam_8"
 #define DC_DAMAGE_VAR_KEY_OTHER				"dcdam_9"
-#define DC_DAMAGE_VAR_KEY_TYPE				"dcdam_10"
+#define DC_DAMAGE_VAR_KEY_PROJECTILE		"dcdam_10"
+#define DC_DAMAGE_VAR_KEY_TYPE				"dcdam_l1"
 
 #endif // !DC_DAMAGE_CONFIG
 
