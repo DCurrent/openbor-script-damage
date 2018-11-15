@@ -79,6 +79,10 @@ int dc_damage_find_adjusted_direction()
 	else if (direction_adjust == openborconstant("DIRECTION_ADJUST_SAME"))
 	{
 		direction_final = direction_current;
+
+		log("\n DIRECTION_ADJUST_SAME");
+		log("\n direction_final: " + direction_final);
+		log("\n direction_current: " + direction_current);
 	}
 	else if (direction_adjust == openborconstant("DIRECTION_ADJUST_NONE"))
 	{
