@@ -10,12 +10,14 @@ float dc_damage_find_velocity_x()
 	int direction;
 	float vel_x;
 
+	// Get entity and velocity setting.
 	ent = dc_damage_get_entity();
 	vel_x = dc_damage_get_drop_velocity_x();
 
+	// If direction is right, reverse X velocity.
 	direction = getentityproperty(ent, "direction");
 
-	if (direction == openborconstant("DIRECTION_LEFT"))
+	if (direction == openborconstant("DIRECTION_RIGHT"))
 	{
 		vel_x = -vel_x;
 	}

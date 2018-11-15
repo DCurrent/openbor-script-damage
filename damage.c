@@ -30,6 +30,7 @@ void dc_damage_apply_damage()
 	drop = dc_damage_get_drop_force();
 	type = dc_damage_get_attack_type();
 
+	// Apply damage.
 	damageentity(ent, other, force, drop, type);	
 
 	// Damge on land / projectile properties.
@@ -38,11 +39,7 @@ void dc_damage_apply_damage()
 
 	changeentityproperty(ent, "damage_on_landing", dol_force);
 	changeentityproperty(ent, "projectile", projectile);
-	//changeentityproperty(ent, "attacking", 1);
-
-	// Adjust direction as needed.
-	dc_damage_apply_direction_adjust();
-
+	
 	// If damage knocked target down, openBOR
 	// has already applied its default velocity,
 	// which we can't control with damageentity()
@@ -55,5 +52,7 @@ void dc_damage_apply_damage()
 		dc_damage_apply_toss();
 	}
 
+	// Adjust direction as needed.
+	dc_damage_apply_direction_adjust();
 	
 }
