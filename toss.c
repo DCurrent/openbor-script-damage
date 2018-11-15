@@ -2,11 +2,32 @@
 
 #import "data/scripts/dc_damage/config.c"
 
+// Determine if X velocity should be inverted
+// based on direction of entity.
+float dc_damage_find_velocity_x()
+{
+	void ent;
+	int direction;
+	float vel_x;
+
+	ent = dc_damage_get_entity();
+	vel_x = dc_damage_get_drop_velocity_x();
+
+	direction = getentityproperty(ent, "direction");
+
+	if (direction == openborconstant("DIRECTION_LEFT"))
+	{
+		vel_x = -vel_x;
+	}
+
+	return vel_x;
+}
+
 // Caskey, Damon V.
 // 2018-11-13
 //
 // Apply toss effect.
-void dc_damage_toss()
+void dc_damage_apply_toss()
 {
 	void ent;
 	float vel_x;
@@ -16,7 +37,7 @@ void dc_damage_toss()
 
 	ent = dc_damage_get_entity();
 
-	vel_x = dc_damage_get_drop_velocity_x();
+	vel_x = dc_damage_find_velocity_x();
 	vel_y = dc_damage_get_drop_velocity_y();
 	vel_z = dc_damage_get_drop_velocity_z();
 
