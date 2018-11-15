@@ -2,6 +2,7 @@
 
 #import "data/scripts/dc_damage/config.c"
 #import "data/scripts/dc_damage/direction.c"
+#import "data/scripts/dc_damage/toss.c"
 
 // Caskey, Damon V.
 // 2018-11-13
@@ -25,7 +26,7 @@ void dc_damage_apply_damage()
 	other = dc_damage_get_other();
 
 	// Attack attributes.
-	force = dc_damage_get_hp_force();
+	force = dc_damage_get_damage_force();
 	drop = dc_damage_get_drop_force();
 	type = dc_damage_get_attack_type();
 
@@ -37,10 +38,10 @@ void dc_damage_apply_damage()
 
 	changeentityproperty(ent, "damage_on_landing", dol_force);
 	changeentityproperty(ent, "projectile", projectile);
-	
+	//changeentityproperty(ent, "attacking", 1);
+
 	// Adjust direction as needed.
 	dc_damage_apply_direction_adjust();
-
 
 	// If damage knocked target down, openBOR
 	// has already applied its default velocity,
@@ -51,27 +52,8 @@ void dc_damage_apply_damage()
 
 	if (fall)
 	{
-		dc_damage_toss();
+		dc_damage_apply_toss();
 	}
-}
 
-// Caskey, Damon V.
-// 2018-11-13
-//
-// Apply toss effect.
-void dc_damage_toss()
-{
-	void ent;
-	float vel_x;
-	float vel_y;
-	float vel_z;
-	int drop;
-
-	ent = dc_damage_get_entity();
-
-	vel_x = dc_damage_get_drop_velocity_x();
-	vel_y = dc_damage_get_drop_velocity_y();
-	vel_z = dc_damage_get_drop_velocity_z();
-
-	tossentity(ent, vel_y, vel_x, vel_z);
+	
 }
