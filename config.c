@@ -156,8 +156,8 @@ void dc_damage_set_entity(void value)
 	setlocalvar(instance + DC_DAMAGE_VAR_KEY_ENT, value);
 }
 
-// Force (amout of hitpoints) to apply.
-int dc_damage_get_hp_force()
+// Force (amount of hitpoint damage) to apply.
+int dc_damage_get_damage_force()
 {
 	int instance;
 	int result;
@@ -172,7 +172,7 @@ int dc_damage_get_hp_force()
 	return result;
 }
 
-void dc_damage_set_hp_force(int value)
+void dc_damage_set_damage_force(int value)
 {
 	int instance;
 
