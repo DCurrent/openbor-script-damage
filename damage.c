@@ -3,6 +3,7 @@
 #import "data/scripts/dc_damage/config.c"
 #import "data/scripts/dc_damage/direction.c"
 #import "data/scripts/dc_damage/toss.c"
+#import "data/scripts/dc_damage/velocity.c"
 
 // Caskey, Damon V.
 // 2018-11-13
@@ -36,10 +37,11 @@ void dc_damage_apply_damage()
 	// Damge on land / projectile properties.
 	dol_force = dc_damage_get_damage_on_landing_force();
 	projectile = dc_damage_get_projectile();
-
+		
 	changeentityproperty(ent, "damage_on_landing", dol_force);
-	changeentityproperty(ent, "projectile", projectile);
-	
+
+	set_entity_property(ent, "blast_state", projectile);
+
 	// If damage knocked target down, openBOR
 	// has already applied its default velocity,
 	// which we can't control with damageentity()

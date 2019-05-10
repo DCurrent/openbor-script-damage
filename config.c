@@ -3,7 +3,7 @@
 // Which instance is in use?
 int dc_damage_get_instance()
 {
-	void result = getlocalvar(DC_DAMAGE_VAR_KEY_INSTANCE);
+	void result = getlocalvar(DC_DAMAGE_MEMBER_INSTANCE);
 
 	if (typeof(result) != openborconstant("VT_INTEGER"))
 	{
@@ -15,7 +15,7 @@ int dc_damage_get_instance()
 
 void dc_damage_set_instance(int value)
 {
-	setlocalvar(DC_DAMAGE_VAR_KEY_INSTANCE, value);
+	setlocalvar(DC_DAMAGE_MEMBER_INSTANCE, value);
 }
 
 // Damage on landing force to apply.
@@ -27,7 +27,7 @@ int dc_damage_get_damage_on_landing_force()
 	// Get instance.
 	instance = dc_damage_get_instance();
 
-	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_DOL_FORCE);
+	result = getlocalvar(instance + DC_DAMAGE_MEMBER_DOL_FORCE);
 
 	if (typeof(result) != openborconstant("VT_INTEGER"))
 	{
@@ -44,7 +44,7 @@ void dc_damage_set_damage_on_landing_force(int value)
 	// Get instance.
 	instance = dc_damage_get_instance();
 
-	setlocalvar(instance + DC_DAMAGE_VAR_KEY_DOL_FORCE, value);
+	setlocalvar(instance + DC_DAMAGE_MEMBER_DOL_FORCE, value);
 }
 
 // Knockdown power to apply.
@@ -56,7 +56,7 @@ int dc_damage_get_drop_force()
 	// Get instance.
 	instance = dc_damage_get_instance();
 
-	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_FORCE);
+	result = getlocalvar(instance + DC_DAMAGE_MEMBER_DROP_FORCE);
 
 	if (typeof(result) != openborconstant("VT_INTEGER"))
 	{
@@ -73,95 +73,10 @@ void dc_damage_set_drop_force(int value)
 	// Get instance.
 	instance = dc_damage_get_instance();
 
-	setlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_FORCE, value);
+	setlocalvar(instance + DC_DAMAGE_MEMBER_DROP_FORCE, value);
 }
 
-// Knockdown velocity to apply, X axis.
-float dc_damage_get_drop_velocity_x()
-{
-	int instance;
-	float result;
 
-	// Get instance.
-	instance = dc_damage_get_instance();
-
-	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_VELOCITY_X);
-
-	if (typeof(result) != openborconstant("VT_DECIMAL"))
-	{
-		result = DC_DAMAGE_DEFAULT_DROP_VELOCITY_X;
-	}
-
-	return result;
-}
-
-void dc_damage_set_drop_velocity_x(float value)
-{
-	int instance;
-
-	// Get instance.
-	instance = dc_damage_get_instance();
-
-	setlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_VELOCITY_X, value);
-}
-
-// Knockdown velocity to apply, Y axis.
-float dc_damage_get_drop_velocity_y()
-{
-	int instance;
-	float result;
-
-	// Get instance.
-	instance = dc_damage_get_instance();
-
-	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_VELOCITY_Y);
-
-	if (typeof(result) != openborconstant("VT_DECIMAL"))
-	{
-		result = DC_DAMAGE_DEFAULT_DROP_VELOCITY_Y;
-	}
-
-	return result;
-}
-
-void dc_damage_set_drop_velocity_y(float value)
-{
-	int instance;
-
-	// Get instance.
-	instance = dc_damage_get_instance();
-
-	setlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_VELOCITY_Y, value);
-}
-
-// Knockdown velocity to apply, Z axis.
-float dc_damage_get_drop_velocity_z()
-{
-	int instance;
-	float result;
-
-	// Get instance.
-	instance = dc_damage_get_instance();
-
-	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_VELOCITY_Z);
-	
-	if (typeof(result) != openborconstant("VT_DECIMAL"))
-	{
-		result = DC_DAMAGE_DEFAULT_DROP_VELOCITY_Z;
-	}
-
-	return result;
-}
-
-void dc_damage_set_drop_velocity_z(float value)
-{
-	int instance;
-
-	// Get instance.
-	instance = dc_damage_get_instance();
-
-	setlocalvar(instance + DC_DAMAGE_VAR_KEY_DROP_VELOCITY_Z, value);
-}
 
 // Base entity functions will act on.
 void dc_damage_get_entity()
@@ -172,7 +87,7 @@ void dc_damage_get_entity()
 	// Get instance.
 	instance = dc_damage_get_instance();
 
-	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_ENT);
+	result = getlocalvar(instance + DC_DAMAGE_MEMBER_ENT);
 
 	if (typeof(result) != openborconstant("VT_PTR"))
 	{
@@ -189,7 +104,7 @@ void dc_damage_set_entity(void value)
 	// Get instance.
 	instance = dc_damage_get_instance();
 
-	setlocalvar(instance + DC_DAMAGE_VAR_KEY_ENT, value);
+	setlocalvar(instance + DC_DAMAGE_MEMBER_ENT, value);
 }
 
 // Force (amount of hitpoint damage) to apply.
@@ -201,7 +116,7 @@ int dc_damage_get_damage_force()
 	// Get instance.
 	instance = dc_damage_get_instance();
 
-	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_FORCE);
+	result = getlocalvar(instance + DC_DAMAGE_MEMBER_FORCE);
 
 	if (typeof(result) != openborconstant("VT_INTEGER"))
 	{
@@ -218,7 +133,7 @@ void dc_damage_set_damage_force(int value)
 	// Get instance.
 	instance = dc_damage_get_instance();
 
-	setlocalvar(instance + DC_DAMAGE_VAR_KEY_FORCE, value);
+	setlocalvar(instance + DC_DAMAGE_MEMBER_FORCE, value);
 }
 
 // Entity given credit for damage.
@@ -230,7 +145,7 @@ void dc_damage_get_other()
 	// Get instance.
 	instance = dc_damage_get_instance();
 
-	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_OTHER);
+	result = getlocalvar(instance + DC_DAMAGE_MEMBER_OTHER);
 
 	if (typeof(result) != openborconstant("VT_PTR"))
 	{
@@ -247,19 +162,19 @@ void dc_damage_set_other(void value)
 	// Get instance.
 	instance = dc_damage_get_instance();
 
-	setlocalvar(instance + DC_DAMAGE_VAR_KEY_OTHER, value);
+	setlocalvar(instance + DC_DAMAGE_MEMBER_OTHER, value);
 }
 
 // Projectile mode to apply.
 int dc_damage_get_projectile()
 {
-	int instance;
+	char id;
 	int result;
 	
-	// Get instance.
-	instance = dc_damage_get_instance();
+	// Get id.
+	id = dc_damage_get_instance() + DC_DAMAGE_MEMBER_PROJECTILE;
 	
-	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_PROJECTILE);
+	result = getlocalvar(id);
 
 	if (typeof(result) != openborconstant("VT_INTEGER"))
 	{
@@ -271,12 +186,17 @@ int dc_damage_get_projectile()
 
 void dc_damage_set_projectile(int value)
 {
-	int instance;
+	char id;
 
-	// Get instance.
-	instance = dc_damage_get_instance();
+	// Get id.
+	id = dc_damage_get_instance() + DC_DAMAGE_MEMBER_PROJECTILE;
 
-	setlocalvar(instance + DC_DAMAGE_VAR_KEY_PROJECTILE, value);
+	if (value == DC_DAMAGE_DEFAULT_PROJECTILE)
+	{
+		value = NULL();
+	}
+
+	setlocalvar(id, value);
 }
 
 // Attack type to apply.
@@ -288,7 +208,7 @@ int dc_damage_get_attack_type()
 	// Get instance.
 	instance = dc_damage_get_instance();
 	
-	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_TYPE);
+	result = getlocalvar(instance + DC_DAMAGE_MEMBER_TYPE);
 
 	if (typeof(result) != openborconstant("VT_INTEGER"))
 	{
@@ -305,5 +225,5 @@ void dc_damage_set_attack_type(int value)
 	// Get instance.
 	instance = dc_damage_get_instance();
 
-	setlocalvar(instance + DC_DAMAGE_VAR_KEY_TYPE, value);
+	setlocalvar(instance + DC_DAMAGE_MEMBER_TYPE, value);
 }

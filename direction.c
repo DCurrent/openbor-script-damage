@@ -8,7 +8,7 @@ int dc_damage_get_direction_adjust()
 	int instance;
 	int result;
 
-	result = getlocalvar(instance + DC_DAMAGE_VAR_KEY_DIRECTION_ADJUST);
+	result = getlocalvar(instance + DC_DAMAGE_MEMBER_DIRECTION_ADJUST);
 
 	if (typeof(result) != openborconstant("VT_INTEGER"))
 	{
@@ -22,7 +22,7 @@ void dc_damage_set_direction_adjust(int value)
 {
 	int instance;
 
-	setlocalvar(instance + DC_DAMAGE_VAR_KEY_DIRECTION_ADJUST, value);
+	setlocalvar(instance + DC_DAMAGE_MEMBER_DIRECTION_ADJUST, value);
 }
 
 void dc_damage_apply_direction_adjust()
@@ -79,10 +79,6 @@ int dc_damage_find_adjusted_direction()
 	else if (direction_adjust == openborconstant("DIRECTION_ADJUST_SAME"))
 	{
 		direction_final = direction_current;
-
-		log("\n DIRECTION_ADJUST_SAME");
-		log("\n direction_final: " + direction_final);
-		log("\n direction_current: " + direction_current);
 	}
 	else if (direction_adjust == openborconstant("DIRECTION_ADJUST_NONE"))
 	{

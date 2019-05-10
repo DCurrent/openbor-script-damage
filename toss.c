@@ -1,6 +1,7 @@
 #include "data/scripts/dc_damage/config.h"
 
 #import "data/scripts/dc_damage/config.c"
+#import "data/scripts/dc_damage/velocity.c"
 
 // Determine if X velocity should be inverted
 // based on direction of entity.
@@ -42,6 +43,6 @@ void dc_damage_apply_toss()
 	vel_x = dc_damage_find_velocity_x();
 	vel_y = dc_damage_get_drop_velocity_y();
 	vel_z = dc_damage_get_drop_velocity_z();
-
+	
 	tossentity(ent, vel_y, vel_x, vel_z);
 }
