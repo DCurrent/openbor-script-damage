@@ -1,6 +1,7 @@
 #include "data/scripts/dc_damage/config.h"
 
 #import "data/scripts/dc_damage/config.c"
+#import "data/scripts/dc_damage/attack_type.c"
 #import "data/scripts/dc_damage/direction.c"
 #import "data/scripts/dc_damage/instance.c"
 #import "data/scripts/dc_damage/toss.c"
