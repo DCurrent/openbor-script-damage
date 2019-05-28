@@ -1,6 +1,7 @@
 #include "data/scripts/dc_damage/config.h"
 
 #import "data/scripts/dc_damage/config.c"
+#import "data/scripts/dc_damage/instance.c"
 
 // Direction adjustment.
 int dc_damage_get_direction_adjust()

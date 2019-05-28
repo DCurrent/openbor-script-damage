@@ -1,7 +1,7 @@
 #include "data/scripts/dc_damage/config.h"
 #import "data/scripts/dc_damage/config.c"
 
-//#import "data/scripts/dc_damage/instance.c"
+#import "data/scripts/dc_damage/instance.c"
 
 // Knockdown velocity to apply, X axis.
 float dc_damage_get_drop_velocity_x()

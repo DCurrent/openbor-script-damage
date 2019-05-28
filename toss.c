@@ -1,6 +1,7 @@
 #include "data/scripts/dc_damage/config.h"
 
 #import "data/scripts/dc_damage/config.c"
+#import "data/scripts/dc_damage/instance.c"
 #import "data/scripts/dc_damage/velocity.c"
 
 // Determine if X velocity should be inverted

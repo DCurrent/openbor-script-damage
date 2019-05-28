@@ -1,22 +1,6 @@
 #include "data/scripts/dc_damage/config.h"
 
-// Which instance is in use?
-int dc_damage_get_instance()
-{
-	void result = getlocalvar(DC_DAMAGE_MEMBER_INSTANCE);
-
-	if (typeof(result) != openborconstant("VT_INTEGER"))
-	{
-		result = DC_DAMAGE_DEFAULT_INSTANCE;
-	}
-
-	return result;
-}
-
-void dc_damage_set_instance(int value)
-{
-	setlocalvar(DC_DAMAGE_MEMBER_INSTANCE, value);
-}
+#include "data/scripts/dc_damage/instance.c"
 
 // Damage on landing force to apply.
 int dc_damage_get_damage_on_landing_force()
