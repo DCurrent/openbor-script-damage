@@ -2,6 +2,7 @@
 
 #import "data/scripts/dc_damage/config.c"
 #import "data/scripts/dc_damage/damage_force.c"
+#import "data/scripts/dc_damage/damage_land.c"
 #import "data/scripts/dc_damage/damage_type.c"
 #import "data/scripts/dc_damage/damage.c"
 #import "data/scripts/dc_damage/direction.c"
