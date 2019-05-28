@@ -5,6 +5,7 @@
 #import "data/scripts/dc_damage/damage.c"
 #import "data/scripts/dc_damage/direction.c"
 #import "data/scripts/dc_damage/drop.c"
+#import "data/scripts/dc_damage/entity.c"
 #import "data/scripts/dc_damage/instance.c"
 #import "data/scripts/dc_damage/toss.c"
 #import "data/scripts/dc_damage/velocity.c"
