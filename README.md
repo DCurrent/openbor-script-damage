@@ -15,6 +15,9 @@ None
 
 ##### dc_damage_get_final_force
 Find out how much hitpoint damage entity will take (i.e. after engine calculates offense/defense ratios) when damage is applied. Sends entity (defender), other (attacker), and attack members to native ```calculatedamage()``` function and returns the result.
+
+For example, if you set up the damage members to apply a force of 80 with attack type 1, and the defender's attack type 1 defense is 0.5, ```dc_damage_get_final_force()``` will return 40.
+
 ```c
 int final_force = dc_damage_get_final_force();
 ```
