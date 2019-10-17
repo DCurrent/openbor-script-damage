@@ -13,3 +13,7 @@ None
 
 ## Use Cases
 
+Find out how much damage target entity will take. 
+```c
+int final_force = dc_damage_get_final_force();
+```
