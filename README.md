@@ -22,6 +22,15 @@ Find out if damage force will reduce entity's hitpoints to 0 or below when appli
 int ko = dc_damage_check_ko();
 ```
 
+##### dc_damage_find_non_lethal_force()
+Find and return amount the maximum non-lethal force from current damage force member value, after all damage ratios are calculated. For example, if the last value set to damage force member is 10, this function will return 9. If the target entity has a defense of 0.5 against the attack (eaning damage taken is normally 5), then return value would be 4.
+
+This function is useful due to openborscript's ```damageentity()``` lacking a non-lethal option.
+
+```c
+int force = dc_damage_find_non_lethal_force();
+```
+
 ##### dc_damage_get_final_force()
 Find out how much hitpoint damage entity will take (i.e. after engine calculates offense/defense ratios) when damage is applied. Sends entity (defender), other (attacker), and attack members to native ```calculatedamage()``` function and returns the result.
 
@@ -30,4 +39,3 @@ For example, if you set up the damage members to apply a force of 80 with attack
 ```c
 int final_force = dc_damage_get_final_force();
 ```
-
