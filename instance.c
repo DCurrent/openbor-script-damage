@@ -8,11 +8,7 @@ int dc_damage_get_instance()
 	if (!result)
 	{
 		result = DC_DAMAGE_DEFAULT_INSTANCE;
-<<<<<<< HEAD
-	}	
-=======
 	}
->>>>>>> 14e84180146fe947a77689ebce04bf4b97cdcfcc
 
 	return result;
 }
