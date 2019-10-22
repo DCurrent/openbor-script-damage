@@ -35,6 +35,11 @@ void dc_damage_apply_damage()
 	ent = dc_damage_get_entity();
 	other = dc_damage_get_other();
 
+	// Unset target's death status so it can receive damage effect even if already killed. This won't
+	// adversely affect anything, because assuming hitpoints are at or below 0 after damage applies
+	// the engine will immediately reset dead flag.
+	set_entity_property(ent, "dead", 0);                                      
+
 	// Attack attributes.	
 	drop = dc_damage_get_drop_force();
 	type = dc_damage_get_attack_type();
