@@ -1,5 +1,5 @@
 # DC Damage
-Control applying damage to entities. Full readme in progress.
+Control applying and handling damage to entities. Full readme in progress.
 
 ## Dependencies
 None
@@ -23,7 +23,7 @@ int ko = dc_damage_check_ko();
 ```
 
 ##### dc_damage_find_non_lethal_force()
-Find and return amount the maximum non-lethal force from current damage force member value, after all damage ratios are calculated. For example, if the last value set to damage force member is 10, this function will return 9. If the target entity has a defense of 0.5 against the attack (eaning damage taken is normally 5), then return value would be 4.
+Find and return the maximum non-lethal force from current damage force member value, after all damage ratios are calculated. For example, if the last value set to damage force member is 10, this function will return 9. If the target entity has a defense of 0.5 against the attack (eaning damage taken is normally 5), then return value would be 4.
 
 This function is useful due to openborscript's ```damageentity()``` lacking a non-lethal option.
 
